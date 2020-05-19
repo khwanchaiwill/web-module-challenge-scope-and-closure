@@ -42,6 +42,7 @@ Find the file `index.js` and complete the tasks.
 Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
+    Answer: Is the Scope nesting that ability for child function can use the variable from parent function or the outer funtion. That can use later any time when the child funtion called.
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -63,8 +64,12 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
-b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+    Answer: 
+b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change? 
+    Answer: The name "Dan willl be always the same. But the the newRoll result will changes.
 c. What is the lexical scope of `newRoll`? 
+    Answer: It's a funtion Child of personalDice funtion to send the result in to personalDice function and give the result when called a personalDice.
+
 
 ### Task 3 - Stretch Goals
 

@@ -14,6 +14,7 @@
  * Invoking `processFirstItem` passing `['foo', 'bar']` and `(str) => str + str`,
  * should return 'foofoo'.
 */
+
 function processFirstItem(stringList, callback) {
   return callback(stringList[0])
 }
@@ -27,11 +28,14 @@ function processFirstItem(stringList, callback) {
  * Study the code for counter1 and counter2. Answer the questions below.
  * 
  * 1. What is the difference between counter1 and counter2?
- * 
+ *    Answer: The difference between counter1 and counter2 is, the counter1 is when ever to call or invorked funtion the result will always remember the first one and add the outer one. It's call result inside the function
+ *    The counter2 can get the same answer only at first but will never change result the second call, it's call the result from out side the function.
  * 2. Which of the two uses a closure? How can you tell?
- * 
+ *    Answer: The counter1 is using the closer because it coding funtion in the funtion.
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
- *
+ *    Answer: Scenario would the counter1 preferable is to store and remember the first result we get and countinue to give the next result;
+ *    Counter2 would be better by that can call the result from outside the funtion.
+ *     
 */
 
 // counter1 code
@@ -56,11 +60,18 @@ function counter2() {
 
 Write a function called `inning` that generates a random number of points that a team scored in an inning. This should be a whole number between 0 and 2. */
 
-function inning(/*Code Here*/){
+function inning(scored){
 
-    /*Code Here*/
+  return function inner(){    
 
+    const point = Math.floor(Math.random() * 2);
+
+      return point;
 }
+}
+const countScore = inning();
+console.log(countScore());
+console.log(countScore());
 
 /* Task 3: finalScore()
 
@@ -75,12 +86,26 @@ finalScore(inning, 9) might return:
 }
 
 */ 
-
-function finalScore(/*code Here*/){
-
-  /*Code Here*/
-
+const team = {Home, Away};
+function finalScore(callback,num1){
+  return callback(num1); 
+};
+const homeScore =function (num1){
+  num1 = num1+2;
+  console.log (`"Home":${num1}`);
 }
+function awayScore(callback, num1){
+   num1 = num1-4;
+  console.log (`"Away":${num1}`);
+}
+
+finalScore(homeScore(inning, 9));
+finalScore(awayScore(inning, 9));
+
+
+
+
+
 
 /* Task 4: 
 
@@ -103,8 +128,23 @@ and returns the score at each pont in the game, like so:
 
 Final Score: 6 - 10 */
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
-}
+// function scoreboard(callback,num1) {
+//   return callback(num1)
+
+// }
+// const homeScore = function(num1){
+//   for(i=0; i<10;i++){
+//     console.log(`inning:$`)
+//   }
+// }
 
 
+// for (let i = 0; i < inningsNum; i++) {
+//   const currentInning = getInningScore(inning)
+//   homeScore = homeScore + currentInning.home;
+//   awayScore = awayScore + currentInning.away;
+//   scoreByInning.push(`inning ${i+1}: Away ${currentInning.away} - Home ${currentInning.home}`)
+// }
+// return scoreByInning;
+// }
+// console.log(scoreboard(getInningScore, inning, 9));
